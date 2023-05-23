@@ -4,7 +4,7 @@ const path = require("node:path");
 
 router.get("/:imageName", async (req, res) => {
   const { imageName } = req.params;
-  const path = require("node:path");
+  // const path = require("node:path");
 
   try {
     res.sendFile(`${imageName}`, {

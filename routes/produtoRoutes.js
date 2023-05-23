@@ -14,7 +14,7 @@ Router.post("/", upload.single("image"), async (req, res) => {
   const produto = {
     titulo,
     categoria,
-    imagem: file.path,
+    imagem: file.filename,
     valor,
     descricao,
   };

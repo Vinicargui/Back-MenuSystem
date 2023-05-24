@@ -5,7 +5,7 @@ const path = require("node:path");
 
 Router.post("/", upload.single("image"), async (req, res) => {
   const { titulo, categoria, valor, descricao } = req.body;
-  const file = req.file;
+  // const file = req.file;
 
   // if (!titulo) {
   //   res.status(422).json({ message: "existe campo não preenchido" });
@@ -14,7 +14,7 @@ Router.post("/", upload.single("image"), async (req, res) => {
   const produto = {
     titulo,
     categoria,
-    imagem: file.filename,
+    imagem: req.file.filename,
     valor,
     descricao,
   };

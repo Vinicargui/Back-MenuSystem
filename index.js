@@ -6,7 +6,7 @@ const getProdutoRouter = require("./routes/getProdutosRoutes");
 const deleteProdutoRoutes = require("./routes/deleteProdutoRoutes");
 const updateProduto = require("./routes/updateProduto");
 const getImageRoutes = require("./routes/getImageRoutes");
-
+const router = require("./routes/route");
 const cors = require("cors");
 
 app.use(express.static("uploads"));
@@ -25,6 +25,8 @@ app.use("/", deleteProdutoRoutes);
 app.use("/", getProdutoRouter);
 app.use("/", updateProduto);
 app.use("/image", getImageRoutes);
+
+app.use(router);
 
 const DB_USER = "vinicargui";
 const DB_PASSWORD = encodeURIComponent("nycJoXhJFbtBNWez");
